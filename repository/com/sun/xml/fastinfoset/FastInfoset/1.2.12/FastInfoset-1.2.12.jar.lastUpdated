@@ -1,0 +1,9 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Feb 02 21:07:47 IST 2022
+https\://artifacts.alfresco.com/nexus/content/groups/public/.lastUpdated=1643816109686
+https\://repo.maven.apache.org/maven2/.lastUpdated=1643816267317
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.lastUpdated=1643816115862
+https\://artifacts.alfresco.com/nexus/content/groups/public/.error=
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.error=
+@default-alfresco-private-repository-https\://artifacts.alfresco.com/nexus/content/groups/private/.lastUpdated=1643816125793
+https\://artifacts.alfresco.com/nexus/content/groups/private/.error=Could not transfer artifact com.sun.xml.fastinfoset\:FastInfoset\:jar\:1.2.12 from/to alfresco-private-repository (https\://artifacts.alfresco.com/nexus/content/groups/private)\: Access denied to https\://artifacts.alfresco.com/nexus/content/groups/private/com/sun/xml/fastinfoset/FastInfoset/1.2.12/FastInfoset-1.2.12.jar. Error code 401, Unauthorized

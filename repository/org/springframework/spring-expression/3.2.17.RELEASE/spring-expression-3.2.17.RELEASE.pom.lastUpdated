@@ -1,0 +1,9 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 09:06:17 IST 2021
+https\://artifacts.alfresco.com/nexus/content/groups/public/.lastUpdated=1637120175311
+https\://repo.maven.apache.org/maven2/.lastUpdated=1637120177481
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.lastUpdated=1637120176184
+https\://artifacts.alfresco.com/nexus/content/groups/public/.error=
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.error=
+@default-alfresco-private-repository-https\://artifacts.alfresco.com/nexus/content/groups/private/.lastUpdated=1637120177084
+https\://artifacts.alfresco.com/nexus/content/groups/private/.error=Could not transfer artifact org.springframework\:spring-expression\:pom\:3.2.17.RELEASE from/to alfresco-private-repository (https\://artifacts.alfresco.com/nexus/content/groups/private)\: Access denied to https\://artifacts.alfresco.com/nexus/content/groups/private/org/springframework/spring-expression/3.2.17.RELEASE/spring-expression-3.2.17.RELEASE.pom. Error code 401, Unauthorized

@@ -1,0 +1,455 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <parent>
+      <groupId>org.alfresco</groupId>
+      <artifactId>aikau-parent</artifactId>
+      <version>1.0.113</version>
+      <relativePath>../pom.xml</relativePath>
+   </parent>
+
+   <artifactId>aikau</artifactId>
+   
+   <name>Aikau</name>
+   <description>Aikau is a meta-framework for Alfresco specific UI development</description>
+
+   <properties>
+      <underscore>_</underscore>
+   </properties>
+
+    <!-- Run profile that invokes the tomcat plugin -->
+    <profiles>
+        <profile>
+            <id>run</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.tomcat.maven</groupId>
+                        <artifactId>tomcat7-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>run-embedded-tomcat</id>
+                                <!-- Bind to the integration-test phase -->
+                                <phase>integration-test</phase>
+                                <goals>
+                                    <!-- Run will run the project as a dynamic webapp -->
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <port>8089</port>
+                                    <ignorePackaging>true</ignorePackaging>
+                                    <warSourceDirectory>${basedir}/target/test-classes/testApp</warSourceDirectory>
+                                    <!-- The context file allows us to map static resources in a virtual webapp -->
+                                    <contextFile>${project.basedir}/tomcat/context.xml</contextFile>
+                                    <useTestClasspath>true</useTestClasspath>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <dependencies>
+               <dependency>
+                  <groupId>javax.servlet</groupId>
+                  <artifactId>servlet-api</artifactId>
+                  <version>2.5</version>
+                  <scope>provided</scope>
+               </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>unitTestsBStack</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.tomcat.maven</groupId>
+                        <artifactId>tomcat7-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>run-embedded-tomcat</id>
+                                <!-- Bind to the pre-integration-test phase -->
+                                <phase>pre-integration-test</phase>
+                                <goals>
+                                    <!-- Run will run the project as a dynamic webapp -->
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <fork>true</fork>
+                                    <port>8089</port>
+                                    <ignorePackaging>true</ignorePackaging>
+                                    <warSourceDirectory>${basedir}/target/test-classes/testApp</warSourceDirectory>
+                                    <!-- The context file allows us to map static resources in a virtual webapp -->
+                                    <contextFile>${project.basedir}/tomcat/context.xml</contextFile>
+                                    <useTestClasspath>true</useTestClasspath>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>shutdown-embedded-tomcat</id>
+                                <!-- Bind to the post-integration-test phase -->
+                                <phase>post-integration-test</phase>
+                                <goals>
+                                    <!-- Safely stop tomcat when integration-test phase is done -->
+                                    <goal>shutdown</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                      <artifactId>maven-antrun-plugin</artifactId>
+                      <executions>
+                        <execution>
+                          <id>run-unit-tests</id>
+                          <phase>integration-test</phase>
+                          <goals>
+                            <goal>run</goal>
+                          </goals>
+                          <configuration>
+                            <target>
+                              <echo>Running npm install</echo>
+                              <exec executable="npm" dir="${project.basedir}">
+                                <arg line="install" />
+                              </exec>
+                              <echo>Running grunt test_bamboo</echo>
+                              <exec executable="grunt" dir="${project.basedir}">
+                                <arg line="test_bamboo" />
+                              </exec>
+                            </target>
+                          </configuration>
+                        </execution>
+                      </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <dependencies>
+               <dependency>
+                  <groupId>javax.servlet</groupId>
+                  <artifactId>servlet-api</artifactId>
+                  <version>2.5</version>
+                  <scope>provided</scope>
+               </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
+
+
+   <build>
+
+      <!-- Everything gets place into the META-INF folder of the JAR because Surf (the expected platform for Aikau)
+           will be able to access resources from that location via the /res/ path -->
+      <resources>
+         <!-- By default we're going to place the Aikau source files into a versioned path... -->
+         <resource>
+            <targetPath>META-INF/js/aikau/${project.version}/alfresco</targetPath>
+            <filtering>false</filtering>
+            <directory>${basedir}/src/main/resources/alfresco</directory>
+         </resource>
+
+         <resource>
+            <targetPath>META-INF/js/aikau/${project.version}/modules</targetPath>
+            <filtering>false</filtering>
+            <directory>${basedir}/src/main/resources/aikau</directory>
+         </resource>
+
+         <!-- Put the release notes in the root of the JAR file -->
+         <resource>
+            <targetPath>.</targetPath>
+            <filtering>true</filtering>
+            <includes>
+               <include>ReleaseNotes.md</include>
+            </includes>
+            <directory>${basedir}</directory>
+         </resource>
+
+         <resource>
+            <!-- Path has to be aligned with version because Surf caches by XML path -->
+            <targetPath>./alfresco/site-data/extensions/${project.version}</targetPath>
+            <filtering>true</filtering>
+            <directory>${basedir}/src/main/resources/extension-module</directory>
+         </resource>
+
+         <resource>
+            <!-- Spring Bean overrides -->
+            <targetPath>./alfresco/web-extension/</targetPath>
+            <filtering>true</filtering>
+            <directory>${basedir}/src/main/resources/spring-context-config</directory>
+         </resource>
+
+         <resource>
+            <!-- WebScript library files go straight into a package -->
+            <targetPath>./alfresco/site-webscripts/org/alfresco/aikau/${project.version}/libs</targetPath>
+            <filtering>false</filtering>
+            <directory>${basedir}/src/main/resources/webscript-libs</directory>
+         </resource>
+
+         <resource>
+            <!-- Extension WebScripts can't use a version with dots, so an Ant plugin renames the target folder later -->
+             <targetPath>./alfresco/site-webscripts/customizations/${project.version}</targetPath>
+            <filtering>true</filtering>
+            <directory>${basedir}/src/main/resources/extension-webscripts</directory>
+         </resource>
+
+         <resource>
+            <!-- Extension WebScripts can't use a version with dots, so an Ant plugin renames the target folder later -->
+            <targetPath>./alfresco/site-webscripts/aikau-patches/${project.version}</targetPath>
+            <filtering>true</filtering>
+            <directory>${basedir}/src/main/resources/patches</directory>
+         </resource>
+
+         <resource>
+            <!-- WebScripts go into their own package -->
+            <targetPath>./alfresco/site-webscripts/org/alfresco/aikau/${project.version}/webscripts</targetPath>
+            <filtering>true</filtering>
+            <directory>${basedir}/src/main/resources/webscripts</directory>
+         </resource>
+
+         <!-- ...but everything else goes into a standard path -->
+         <resource>
+            <targetPath>META-INF/js/lib</targetPath>
+            <filtering>false</filtering>
+            <directory>${basedir}/src/main/resources/lib</directory>
+         </resource>
+
+          <!-- The tomcat plugin can't have a virtual classpath for this proejct, and it wont accept
+               additional classpaths, so we have to copy these into the test classpath
+          -->
+         <resource>
+            <directory>${project.build.outputDirectory}/alfresco</directory>
+            <targetPath>${project.build.testOutputDirectory}/testApp/WEB-INF/classes/alfresco</targetPath>
+         </resource>
+      </resources>
+
+      <testResources>
+         <testResource>
+            <directory>src/test/resources</directory>
+            <filtering>true</filtering>
+            <includes>
+               <include>testApp/WEB-INF/surf.xml</include>
+               <include>testApp/WEB-INF/config/web-application-config.xml</include>
+            </includes>
+         </testResource>
+         <testResource>
+            <directory>src/test/resources</directory>
+            <filtering>false</filtering>
+            <excludes>
+               <exclude>testApp/WEB-INF/surf.xml</exclude>
+               <exclude>testApp/WEB-INF/config/web-application-config.xml</exclude>
+            </excludes>
+         </testResource>
+      </testResources>
+
+      <plugins>
+
+         <!-- See AKU-845 - This plugin has been brought in to create a property that is the project
+              version with all "." characters replaced with "-" characters. The reason that this is 
+              required is that we want to defined version specific WebScript URLs, but for some reason
+              (most likely in Surf) the RequestDispatcher fails to map URLs containing more than
+              one "." character - this means that the Aikau version cannot be used without modification -->
+         <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>build-helper-maven-plugin</artifactId>
+            <executions>
+               <execution>
+                  <id>regex-property</id>
+                  <goals>
+                     <goal>regex-property</goal>
+                  </goals>
+                  <configuration>
+                     <name>webscript.version</name>
+                     <value>${project.version}</value>
+                     <regex>[\.\-]</regex>
+                     <replacement>_</replacement>
+                     <failIfNoMatch>false</failIfNoMatch>
+                  </configuration>
+             </execution>
+           </executions>
+         </plugin>
+
+         <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>templating-maven-plugin</artifactId>
+            <version>1.0.0</version>
+            <executions>
+               <execution>
+                  <id>filter-src</id>
+                  <goals>
+                     <goal>filter-sources</goal>
+                  </goals>
+                  <configuration>
+                     <!-- 
+                       Note the two following parameters are the default one. 
+                       These are specified here just as a reminder. 
+                       But as the Maven philosophy is strongly about conventions, 
+                       it's better to just not specify them.
+                     -->
+                     <sourceDirectory>${basedir}/src/main/java-templates</sourceDirectory>
+                     <outputDirectory>${project.build.directory}/generated-sources/java-templates</outputDirectory>
+                  </configuration>
+               </execution>
+           </executions>
+         </plugin>
+
+         <plugin>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <executions>
+               <execution>
+                  <id>duplicate-english-messages</id>
+                  <phase>generate-resources</phase>
+                  <goals>
+                     <goal>run</goal>
+                  </goals>
+                  <configuration>
+                     <target>
+                        <copy todir="${project.build.outputDirectory}/META-INF/js/aikau/${project.version}">
+                           <fileset dir="${basedir}/src/main/resources" includes="alfresco/**/*.properties" />
+                           <mapper from="^([^_]*).properties$" to="\1_en.properties" type="regexp" />
+                        </copy>
+                     </target>
+                  </configuration>
+               </execution>
+               <execution>
+                  <id>copy-webscript-beans</id>
+                  <phase>process-test-classes</phase>
+                  <goals>
+                     <goal>run</goal>
+                  </goals>
+                  <configuration>
+                     <target>
+                        <copy todir="${project.build.testOutputDirectory}/testApp/WEB-INF/classes">
+                           <fileset dir="${project.build.testOutputDirectory}" includes="**/*.class" />
+                        </copy>
+                      </target>
+                  </configuration>
+                </execution>
+                <execution>
+                  <id>rename-extensions-folder</id>
+                  <phase>prepare-package</phase>
+                  <goals>
+                     <goal>run</goal>
+                  </goals>
+                  <configuration>
+                     <target>
+                        <echo>Renaming folders</echo>
+                        <move file="${project.build.outputDirectory}/alfresco/site-webscripts/customizations/${project.version}" tofile="${project.build.outputDirectory}/alfresco/site-webscripts/customizations/${webscript.version}" />
+                        <move file="${project.build.outputDirectory}/alfresco/site-webscripts/aikau-patches/${project.version}" tofile="${project.build.outputDirectory}/alfresco/site-webscripts/aikau-patches/${webscript.version}" />
+                      </target>
+                  </configuration>
+                </execution>
+                <!-- <execution>
+                  <id>rename-java-folder</id>
+                  <phase>prepare-package</phase>
+                  <goals>
+                     <goal>run</goal>
+                  </goals>
+                  <configuration>
+                     <target>
+                        <echo>Renaming folder</echo>
+                        <move file="${project.build.outputDirectory}/org/alfresco/aikau" tofile="${project.build.outputDirectory}/org/alfresco/aikau/${project.version}" />
+                      </target>
+                  </configuration>
+                </execution> -->
+            </executions>
+        </plugin>
+
+        <plugin>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <executions>
+               <execution>
+                  <id>unpack-dependencies</id>
+                  <phase>prepare-package</phase>
+                  <goals>
+                     <goal>unpack</goal>
+                  </goals>
+                  <configuration>
+                     <artifactItems>
+                        <artifactItem>
+                           <groupId>org.dojotoolkit</groupId>
+                           <artifactId>dojo</artifactId>
+                           <version>${dependency.dojo.version}</version>
+                           <type>zip</type>
+                           <classifier>distribution</classifier>
+                           <overWrite>true</overWrite>
+                           <outputDirectory>${basedir}/target/classes/META-INF/js/lib</outputDirectory>
+                        </artifactItem>
+                     </artifactItems>
+                  </configuration>
+                </execution>
+            </executions>
+         </plugin>
+
+         <plugin>
+            <artifactId>maven-jar-plugin</artifactId>
+            <executions>
+               <execution>
+                  <id>build-tests</id>
+                  <goals>
+                     <goal>test-jar</goal>
+                  </goals>
+                  <configuration>
+                     <testClassesDirectory>${project.build.testOutputDirectory}/test-selectors</testClassesDirectory>
+                     <includes>
+                        <include>**/*.properties</include>
+                     </includes>
+                  </configuration>
+               </execution>
+            </executions>
+         </plugin>
+
+         <plugin>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-maven-plugin</artifactId>
+            <version>9.2.5.v20141112</version>
+            <configuration>
+
+               <!-- Sets the port when using mvn jetty:run-forked -->
+               <jvmArgs>-Djetty.port=8089</jvmArgs>
+
+               <!-- Override the system properties to set a port that *should* be unused -->
+               <systemProperties>
+                  <force>true</force>
+                  <systemProperty>
+                     <name>jetty.port</name>
+                     <value>8089</value>
+                  </systemProperty>
+               </systemProperties>
+
+               <!--  The following 3 settings allow us to execute a mvn jetty:stop command to shutdown the test application -->
+               <stopPort>9966</stopPort>
+               <stopKey>foo</stopKey>
+               <stopWait>20</stopWait>
+
+                <!-- Configure the application, this will essentially be Share but overlaid with the test resources -->
+               <webApp>
+                  <descriptor>target/test-classes/testApp/WEB-INF/web.xml</descriptor>
+                  <contextPath>/aikau</contextPath>
+                  <resourceBases>
+                     <resourceBase>target/test-classes/testApp</resourceBase>
+                     <resourceBase>target/classes/META-INF</resourceBase>
+                     <!-- <resourceBase>${project.build.directory}/${project.build.finalName}</resourceBase> -->
+                  </resourceBases>
+                  <allowDuplicateFragmentNames>true</allowDuplicateFragmentNames> 
+               </webApp>
+               <webAppSourceDirectory>target/test-classes/testApp</webAppSourceDirectory>
+               <classesDirectory>target/classes</classesDirectory>
+               <testClassesDirectory>target/test-classes/testApp/WEB-INF/classes</testClassesDirectory>
+               <baseAppFirst>false</baseAppFirst>
+            </configuration>
+         </plugin>
+
+         <!-- Generate jsdoc using a Maven plugin (Command: mvn jsdoc3:jsdoc3) -->
+         <plugin>
+            <groupId>com.phasebash.jsdoc</groupId>
+            <artifactId>jsdoc3-maven-plugin</artifactId>
+            <version>1.1.0</version>
+            <configuration>
+               <recursive>true</recursive>
+               <directoryRoots>
+                  <directoryRoot>${basedir}/src/main/resources/alfresco/</directoryRoot>
+               </directoryRoots>
+               <templateDirectory>${basedir}/resources/jsdoc/templates/alfresco</templateDirectory>
+               <configFile>${basedir}/conf.json</configFile>
+            </configuration>
+         </plugin>
+         
+      </plugins>
+   </build>
+
+</project>

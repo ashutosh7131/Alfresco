@@ -1,0 +1,9 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Nov 16 22:15:20 IST 2021
+https\://artifacts.alfresco.com/nexus/content/groups/public/.lastUpdated=1637081119419
+https\://repo.maven.apache.org/maven2/.lastUpdated=1637081120434
+http\://0.0.0.0/.error=Could not transfer artifact javax.servlet\:servlet-api\:pom\:2.3 from/to maven-default-http-blocker (http\://0.0.0.0/)\: Blocked mirror for repositories\: [alfresco-public (http\://artifacts.alfresco.com/nexus/content/repositories/releases, default, releases+snapshots), apache.snapshots (http\://repository.apache.org/snapshots, default, snapshots)]
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.lastUpdated=1637081120137
+@default-maven-default-http-blocker-http\://0.0.0.0/.lastUpdated=1637081118710
+https\://artifacts.alfresco.com/nexus/content/groups/public/.error=
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.error=

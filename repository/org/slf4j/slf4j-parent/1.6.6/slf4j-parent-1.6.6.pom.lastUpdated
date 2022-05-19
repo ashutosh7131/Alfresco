@@ -1,0 +1,9 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Feb 02 21:00:27 IST 2022
+https\://artifacts.alfresco.com/nexus/content/groups/public/.lastUpdated=1643815826009
+https\://repo.maven.apache.org/maven2/.lastUpdated=1643815827952
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.lastUpdated=1643815826808
+https\://artifacts.alfresco.com/nexus/content/groups/public/.error=
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.error=
+@default-alfresco-private-repository-https\://artifacts.alfresco.com/nexus/content/groups/private/.lastUpdated=1643815827622
+https\://artifacts.alfresco.com/nexus/content/groups/private/.error=Could not transfer artifact org.slf4j\:slf4j-parent\:pom\:1.6.6 from/to alfresco-private-repository (https\://artifacts.alfresco.com/nexus/content/groups/private)\: Access denied to https\://artifacts.alfresco.com/nexus/content/groups/private/org/slf4j/slf4j-parent/1.6.6/slf4j-parent-1.6.6.pom. Error code 401, Unauthorized

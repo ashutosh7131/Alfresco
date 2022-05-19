@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 09:18:18 IST 2021
+jcl-over-slf4j-1.7.28.jar>central=
+jcl-over-slf4j-1.7.28.pom>central=
+jcl-over-slf4j-1.7.28-sources.jar>central=

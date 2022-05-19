@@ -1,0 +1,9 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Nov 16 22:14:53 IST 2021
+https\://artifacts.alfresco.com/nexus/content/groups/public/.lastUpdated=1637081092006
+https\://repo.maven.apache.org/maven2/.lastUpdated=1637081093050
+http\://0.0.0.0/.error=Could not transfer artifact org.codehaus.plexus\:plexus-utils\:pom\:3.0.10 from/to maven-default-http-blocker (http\://0.0.0.0/)\: Blocked mirror for repositories\: [alfresco-public (http\://artifacts.alfresco.com/nexus/content/repositories/releases, default, releases+snapshots), apache.snapshots (http\://repository.apache.org/snapshots, default, snapshots)]
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.lastUpdated=1637081092706
+@default-maven-default-http-blocker-http\://0.0.0.0/.lastUpdated=1637081091300
+https\://artifacts.alfresco.com/nexus/content/groups/public/.error=
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.error=

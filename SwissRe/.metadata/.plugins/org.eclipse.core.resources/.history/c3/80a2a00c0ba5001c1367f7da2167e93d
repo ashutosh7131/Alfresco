@@ -1,0 +1,107 @@
+(function() {
+	YAHOO.Bubbling.fire("registerAction", {
+		actionName: "onNewBoxingAction",
+		fn: function custom_DLTB_onBoxingAction(assets) {
+			var elementId = this.id + "-createAttribute",
+				createAttributeDlg = new Alfresco.module.SimpleDialog(elementId);
+			var noderef = assets.nodeRef;
+			// This is a create scenario, attribute does not exist
+			var keys = "create_attribute";
+			// Create Attribute Dialog Form Template
+			var templateUrl = YAHOO.lang.substitute(
+				Alfresco.constants.URL_SERVICECONTEXT +
+				"components/form?itemKind={itemKind}&itemId={itemId}&mode={mode}&submitType={submitType}&formId={formId}&showCancelButton=true", {
+				itemKind: "type",
+				itemId: "sr:boxing",
+				destination: noderef,
+				mode: "create",
+				submitType: "json",
+				formId: "boxing",
+				showCaption: false
+			}
+			);
+			console.log(templateUrl);
+			// Intercept before dialog show
+			var doBeforeDialogShow = function org_alfresco_training_onCreateAttribute_doBeforeDialogShow(p_form, p_dialog) {
+				Dom.get(elementId + "-form-container_h").innerHTML = "Assign Box Number";
+				Dom.get(elementId + "-form-submit-button").innerHTML = "Assign";
+			};
+			var doBeforeFormSubmit = function swiss_re_onCreateAttribute_doBeforeFormSubmit() {
+				console.log(assets);
+			};
+			
+			var selectedNodes;
+			var param;
+			var jsonParamObj;
+			
+			var doBeforeAjaxRequest = function swiss_re_onCreateAttribute_doBeforeAjaxRequest(config, obj) {
+				jsonParamObj = {};
+				//selectedNodes;
+				param = config.dataObj;
+				//console.log(config.dataObj);
+				console.log(param);
+				//console.log(selectedNodes);
+				console.log(param);
+				jsonParamObj.nodeRefs = [];
+				if (YAHOO.lang.isArray(assets)) {
+					for (var i = 0, l = assets.length; i < l; i++) {
+						selectedNodes = jsonParamObj.nodeRefs.push(assets[i].nodeRef);
+						console.log(selectedNodes);
+					}
+				} else {
+					jsonParamObj.nodeRef = assets.nodeRef;
+					//selectedNodes = assets.nodeRef;
+					//console.log(selectedNodes);
+				}
+				jsonParamObj.params = config.dataObj;
+				
+				return true;
+				//doPostRequest;
+			};
+            
+            //var doRedirect = Alfresco.constants.PROXY_URI + "alfresco/example-action-multi" + jsonParamObj;
+			var doPost = Alfresco.util.Ajax.jsonPost(
+				{
+					url: Alfresco.constants.PROXY_URI + "alfresco/example-action-multi",
+					responseContentType: "application/json",
+					dataObj: assets,
+					successMessage: this.msg("message.example-action.success"),
+					failureMessage: this.msg("message.example-action.failure"),
+					successCallback:
+					{
+						fn: function exampleSuccess() {
+							console.log("Success");
+						},
+						scope: this
+					},
+					failureCallback:
+					{
+						fn: function exampleFailure() {
+							console.log("Failure");
+						},
+						scope: this
+					}
+				});
+
+			createAttributeDlg.setOptions({
+				width: "33em",
+				templateUrl: templateUrl,
+				actionUrl: doPost,
+				destroyOnHide: true,
+				doBeforeDialogShow: {
+					fn: doBeforeDialogShow,
+					scope: this
+				},
+				doBeforeFormSubmit: {
+					fn: doBeforeFormSubmit,
+					scope: this
+				},
+				doBeforeAjaxRequest: {
+					fn: doBeforeAjaxRequest,
+					scope: this
+				},
+			}).show();
+			//stop
+		}
+	});
+})();

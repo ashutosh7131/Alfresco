@@ -1,0 +1,9 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Feb 02 21:00:46 IST 2022
+https\://artifacts.alfresco.com/nexus/content/groups/public/.lastUpdated=1643815844183
+https\://repo.maven.apache.org/maven2/.lastUpdated=1643815846220
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.lastUpdated=1643815844964
+https\://artifacts.alfresco.com/nexus/content/groups/public/.error=
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.error=
+@default-alfresco-private-repository-https\://artifacts.alfresco.com/nexus/content/groups/private/.lastUpdated=1643815845753
+https\://artifacts.alfresco.com/nexus/content/groups/private/.error=Could not transfer artifact commons-beanutils\:commons-beanutils\:pom\:1.8.3 from/to alfresco-private-repository (https\://artifacts.alfresco.com/nexus/content/groups/private)\: Access denied to https\://artifacts.alfresco.com/nexus/content/groups/private/commons-beanutils/commons-beanutils/1.8.3/commons-beanutils-1.8.3.pom. Error code 401, Unauthorized

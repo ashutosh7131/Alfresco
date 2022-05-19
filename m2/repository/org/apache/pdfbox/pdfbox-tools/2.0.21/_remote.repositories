@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 09:07:00 IST 2021
+pdfbox-tools-2.0.21.jar>central=
+pdfbox-tools-2.0.21.pom>central=
+pdfbox-tools-2.0.21-sources.jar>central=

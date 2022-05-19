@@ -1,0 +1,9 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Dec 18 18:55:14 IST 2021
+https\://artifacts.alfresco.com/nexus/content/groups/public/.lastUpdated=1639833912443
+https\://repo.maven.apache.org/maven2/.lastUpdated=1639833914615
+https\://artifacts.alfresco.com/nexus/content/groups/private/.lastUpdated=1639833910862
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.lastUpdated=1639833914015
+https\://artifacts.alfresco.com/nexus/content/groups/public/.error=
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.error=
+https\://artifacts.alfresco.com/nexus/content/groups/private/.error=

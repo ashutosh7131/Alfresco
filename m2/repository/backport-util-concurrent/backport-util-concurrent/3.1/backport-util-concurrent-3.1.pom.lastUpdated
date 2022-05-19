@@ -1,0 +1,9 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Nov 16 22:03:00 IST 2021
+https\://artifacts.alfresco.com/nexus/content/groups/public/.lastUpdated=1637080379544
+https\://repo.maven.apache.org/maven2/.lastUpdated=1637080380604
+http\://0.0.0.0/.error=Could not transfer artifact backport-util-concurrent\:backport-util-concurrent\:pom\:3.1 from/to maven-default-http-blocker (http\://0.0.0.0/)\: Blocked mirror for repositories\: [alfresco-public (http\://artifacts.alfresco.com/nexus/content/repositories/releases, default, releases+snapshots), apache.snapshots (http\://repository.apache.org/snapshots, default, snapshots)]
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.lastUpdated=1637080380268
+@default-maven-default-http-blocker-http\://0.0.0.0/.lastUpdated=1637080378869
+https\://artifacts.alfresco.com/nexus/content/groups/public/.error=
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.error=

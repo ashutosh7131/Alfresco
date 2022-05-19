@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Dec 18 18:40:26 IST 2021
+jackson-datatype-jdk8-2.12.4.jar>central=
+jackson-datatype-jdk8-2.12.4-sources.jar>central=
+jackson-datatype-jdk8-2.12.4.pom>central=

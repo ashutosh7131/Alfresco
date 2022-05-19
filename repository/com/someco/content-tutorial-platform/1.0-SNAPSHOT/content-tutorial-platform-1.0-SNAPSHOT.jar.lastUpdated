@@ -1,0 +1,8 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Dec 18 19:32:36 IST 2021
+https\://artifacts.alfresco.com/nexus/content/groups/public/.lastUpdated=1639836152937
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.lastUpdated=1639836154598
+https\://artifacts.alfresco.com/nexus/content/groups/public/.error=
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.error=
+@default-alfresco-private-repository-https\://artifacts.alfresco.com/nexus/content/groups/private/.lastUpdated=1639836156251
+https\://artifacts.alfresco.com/nexus/content/groups/private/.error=Could not transfer artifact com.someco\:content-tutorial-platform\:jar\:1.0-SNAPSHOT from/to alfresco-private-repository (https\://artifacts.alfresco.com/nexus/content/groups/private)\: Access denied to https\://artifacts.alfresco.com/nexus/content/groups/private/com/someco/content-tutorial-platform/1.0-SNAPSHOT/content-tutorial-platform-1.0-SNAPSHOT.jar. Error code 401, Unauthorized

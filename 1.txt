@@ -1,0 +1,11 @@
+import alfresco-base
+webscript com.swissre.alf
+
+com.swissre.alfrm
+alfresco-base
+
+
+
+sample web-createMessage
+
+http://localhost:8080/alfresco/s/api/people/upload

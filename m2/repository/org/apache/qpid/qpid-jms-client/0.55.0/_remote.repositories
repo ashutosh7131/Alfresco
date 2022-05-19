@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 17:56:43 IST 2021
+qpid-jms-client-0.55.0.jar>central=
+qpid-jms-client-0.55.0-sources.jar>central=
+qpid-jms-client-0.55.0.pom>central=

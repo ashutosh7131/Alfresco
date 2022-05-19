@@ -1,0 +1,9 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Feb 02 21:03:47 IST 2022
+https\://artifacts.alfresco.com/nexus/content/groups/public/.lastUpdated=1643816025112
+https\://repo.maven.apache.org/maven2/.lastUpdated=1643816027031
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.lastUpdated=1643816025896
+https\://artifacts.alfresco.com/nexus/content/groups/public/.error=
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.error=
+@default-alfresco-private-repository-https\://artifacts.alfresco.com/nexus/content/groups/private/.lastUpdated=1643816026680
+https\://artifacts.alfresco.com/nexus/content/groups/private/.error=Could not transfer artifact com.sun.xml.bind.mvn\:jaxb-bundles\:pom\:2.2.11 from/to alfresco-private-repository (https\://artifacts.alfresco.com/nexus/content/groups/private)\: Access denied to https\://artifacts.alfresco.com/nexus/content/groups/private/com/sun/xml/bind/mvn/jaxb-bundles/2.2.11/jaxb-bundles-2.2.11.pom. Error code 401, Unauthorized

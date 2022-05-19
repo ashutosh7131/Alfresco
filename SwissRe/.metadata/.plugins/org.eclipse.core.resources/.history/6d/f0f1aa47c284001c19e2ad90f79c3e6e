@@ -1,0 +1,125 @@
+(function() {
+    YAHOO.Bubbling.fire("registerAction", {
+        actionName: "onBoxingAction",
+        fn: function custom_Boxing_onBoxingAction(assets) {
+            var elementId = this.id + "-createAttribute",
+                createAttributeDlg = new Alfresco.module.SimpleDialog(elementId);
+
+            var destination = assets[0].parent.nodeRef;
+            
+            var nf = "";
+            var jsonParamObj = {};
+           
+            var keys = "create_box";
+            // Create Attribute Dialog Form Template
+
+            var templateUrl = YAHOO.lang.substitute(
+                Alfresco.constants.URL_SERVICECONTEXT +
+                "components/form?itemKind={itemKind}&itemId={itemId}&destination={destination}&submitType={submitType}&formId={formId}&mode={mode}&showCaption={showCaption}&showCancelButton=true", {
+                    itemKind: "type",
+                    itemId: "sr:boxing",
+                    destination: destination,
+                    mode: "create",
+                    submitType: "json",
+                    formId: "boxing",
+                    showCaption: "false"
+                }
+            );
+            console.log(templateUrl);
+            // Intercept before dialog show
+           
+            var doBeforeDialogShow = function org_alfresco_training_onCreateAttribute_doBeforeDialogShow(p_form, p_dialog) {
+                Dom.get(elementId + "-form-container_h").innerHTML = "Assign Box Number";
+                Dom.get(elementId + "-form-submit-button").innerHTML = "Assign";
+            };
+            
+            var doBeforeAjaxRequest = function swiss_re_onCreateAttribute_doBeforeAjaxRequest(config, obj) {
+
+
+                jsonParamObj.nodeRefs = [];
+                if (YAHOO.lang.isArray(assets)) {
+                    for (var i = 0, l = assets.length; i < l; i++) {
+                        jsonParamObj.nodeRefs.push(assets[i].nodeRef);
+                    }
+                } else {
+                    jsonParamObj.nodeRef = assets.nodeRef;
+                }
+                jsonParamObj.params = config.dataObj;
+                console.log(JSON.stringify(jsonParamObj));
+
+                return true;
+
+                //done
+
+
+
+            };
+            createAttributeDlg.setOptions({
+                width: "33em",
+                templateUrl: templateUrl,
+                actionUrl: null,
+                destroyOnHide: true,
+                doBeforeDialogShow: {
+                    fn: doBeforeDialogShow,
+                    scope: this
+                },
+                doBeforeAjaxRequest: {
+                    fn: doBeforeAjaxRequest,
+                    scope: this
+                },
+                onSuccess: {
+                    fn: function org_alfresco_training_onCreateAttribute_success(response) {
+                        var nf = new Alfresco.util.NodeRef(response.json.persistedObject);
+                        
+                        var doPost = Alfresco.util.Ajax.jsonPost({
+                            url: Alfresco.constants.PROXY_URI + "alfresco/customcontent",
+                            dataObj: assets,
+                            successCallback: {
+                                fn: function(res) {
+                                    console.log(res);
+									 Alfresco.util.PopupManager.displayPrompt({
+                                        title: Alfresco.util.message("message.success", this.name),
+                                        text: "Box Number Successfully changed for the selected nodes"
+                                    });
+                                    window.location.reload();
+
+                                },
+                                scope: this
+                            },
+                            failureCallback: {
+                                fn: function(response) {
+                                    // Display error message and reload
+                                    Alfresco.util.PopupManager.displayPrompt({
+                                        title: Alfresco.util.message("message.failure", this.name),
+                                        text: "Failed.Please try again after sometime"
+                                    });
+                                },
+                                scope: this
+                            }
+                        });
+						if(nf){
+                        Alfresco.util.Ajax.request({
+                            method: Alfresco.util.Ajax.DELETE,
+                            url: Alfresco.constants.PROXY_URI + "slingshot/doclib/action/file/node/" + nf.uri,
+                            successCallback: console.log("successfully deleted---" + nf),
+                            failureMessage: console.log("failed to delete---"),
+                        });
+						}
+                    },
+                    scope: this
+                },
+                onFailure: {
+                    fn: function org_alfresco_training_onCreateAttribute_failure(response) {
+                        alert('failure');
+                        Alfresco.util.PopupManager.displayMessage({
+                            text: this.msg("failed.. loading form...Please refres and try again.")
+                        });
+                    },
+                    scope: this
+                }
+            }).show();
+            
+            
+        }
+    });
+})();

@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 09:23:56 IST 2021
+activemq-all-5.16.1.jar>central=
+activemq-all-5.16.1.pom>central=
+activemq-all-5.16.1-sources.jar>central=

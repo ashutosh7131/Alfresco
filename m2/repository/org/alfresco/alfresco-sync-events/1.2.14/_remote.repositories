@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 09:11:18 IST 2021
+alfresco-sync-events-1.2.14.jar>alfresco-artifacts-repository=
+alfresco-sync-events-1.2.14-sources.jar>alfresco-artifacts-repository=
+alfresco-sync-events-1.2.14.pom>alfresco-artifacts-repository=

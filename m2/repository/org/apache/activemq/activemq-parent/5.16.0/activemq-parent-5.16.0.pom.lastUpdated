@@ -1,0 +1,10 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 11:00:57 IST 2021
+https\://artifacts.alfresco.com/nexus/content/groups/public/.lastUpdated=1637127056201
+https\://repo.maven.apache.org/maven2/.lastUpdated=1637127057959
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.lastUpdated=1637127056899
+https\://artifacts.alfresco.com/nexus/content/groups/public/.error=
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.error=
+26c5a2c2cad2217587aab8b65e4a63e67db10635@default-alfresco-artifacts-repository-https\://artifacts.alfresco.com/nexus/content/groups/private/.lastUpdated=1637127055491
+@default-alfresco-private-repository-https\://artifacts.alfresco.com/nexus/content/groups/private/.lastUpdated=1637127057589
+https\://artifacts.alfresco.com/nexus/content/groups/private/.error=Could not transfer artifact org.apache.activemq\:activemq-parent\:pom\:5.16.0 from/to alfresco-private-repository (https\://artifacts.alfresco.com/nexus/content/groups/private)\: authentication failed for https\://artifacts.alfresco.com/nexus/content/groups/private/org/apache/activemq/activemq-parent/5.16.0/activemq-parent-5.16.0.pom, status\: 401 Unauthorized

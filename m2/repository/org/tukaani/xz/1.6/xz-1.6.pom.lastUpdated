@@ -1,0 +1,9 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Nov 16 22:05:13 IST 2021
+https\://artifacts.alfresco.com/nexus/content/groups/public/.lastUpdated=1637080512538
+https\://repo.maven.apache.org/maven2/.lastUpdated=1637080513647
+http\://0.0.0.0/.error=Could not transfer artifact org.tukaani\:xz\:pom\:1.6 from/to maven-default-http-blocker (http\://0.0.0.0/)\: Blocked mirror for repositories\: [alfresco-public (http\://artifacts.alfresco.com/nexus/content/repositories/releases, default, releases+snapshots)]
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.lastUpdated=1637080513271
+@default-maven-default-http-blocker-http\://0.0.0.0/.lastUpdated=1637080511817
+https\://artifacts.alfresco.com/nexus/content/groups/public/.error=
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.error=

@@ -1,0 +1,10 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 09:19:17 IST 2021
+@default-alfresco-public-snapshots-https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.lastUpdated=1637120957738
+@default-central-https\://repo.maven.apache.org/maven2/.lastUpdated=1637120957742
+https\://artifacts.alfresco.com/nexus/content/groups/private/.lastUpdated=1637120957727
+https\://artifacts.alfresco.com/nexus/content/groups/public/.error=Could not transfer artifact net.sf.ehcache\:ehcache-core\:jar\:sources\:2.6.2 from/to alfresco-public (https\://artifacts.alfresco.com/nexus/content/groups/public)\: The operation was cancelled.
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.error=Could not transfer artifact net.sf.ehcache\:ehcache-core\:jar\:sources\:2.6.2 from/to alfresco-public-snapshots (https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots)\: The operation was cancelled.
+https\://repo.maven.apache.org/maven2/.error=Could not transfer artifact net.sf.ehcache\:ehcache-core\:jar\:sources\:2.6.2 from/to central (https\://repo.maven.apache.org/maven2)\: The operation was cancelled.
+https\://artifacts.alfresco.com/nexus/content/groups/private/.error=
+@default-alfresco-public-https\://artifacts.alfresco.com/nexus/content/groups/public/.lastUpdated=1637120957733

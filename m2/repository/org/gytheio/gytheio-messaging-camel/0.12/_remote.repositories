@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 17:54:27 IST 2021
+gytheio-messaging-camel-0.12.jar>alfresco-artifacts-repository=
+gytheio-messaging-camel-0.12.pom>alfresco-artifacts-repository=
+gytheio-messaging-camel-0.12-sources.jar>alfresco-artifacts-repository=

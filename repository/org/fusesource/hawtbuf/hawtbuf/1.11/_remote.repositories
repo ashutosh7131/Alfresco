@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 09:12:52 IST 2021
+hawtbuf-1.11.jar>central=
+hawtbuf-1.11-sources.jar>central=
+hawtbuf-1.11.pom>central=

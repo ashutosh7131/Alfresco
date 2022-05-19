@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 09:18:23 IST 2021
+netcdf4-4.5.5.jar>central=
+netcdf4-4.5.5.pom>central=
+netcdf4-4.5.5-sources.jar>central=

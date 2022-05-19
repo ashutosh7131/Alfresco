@@ -1,0 +1,9 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Feb 02 21:04:12 IST 2022
+https\://artifacts.alfresco.com/nexus/content/groups/public/.lastUpdated=1643816050065
+https\://repo.maven.apache.org/maven2/.lastUpdated=1643816052268
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.lastUpdated=1643816050859
+https\://artifacts.alfresco.com/nexus/content/groups/public/.error=
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.error=
+@default-alfresco-private-repository-https\://artifacts.alfresco.com/nexus/content/groups/private/.lastUpdated=1643816051644
+https\://artifacts.alfresco.com/nexus/content/groups/private/.error=Could not transfer artifact org.apache.cxf\:cxf-rt-ws-addr\:pom\:3.1.16 from/to alfresco-private-repository (https\://artifacts.alfresco.com/nexus/content/groups/private)\: Access denied to https\://artifacts.alfresco.com/nexus/content/groups/private/org/apache/cxf/cxf-rt-ws-addr/3.1.16/cxf-rt-ws-addr-3.1.16.pom. Error code 401, Unauthorized

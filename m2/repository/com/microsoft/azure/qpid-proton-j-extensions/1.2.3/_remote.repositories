@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 08:35:01 IST 2021
+qpid-proton-j-extensions-1.2.3-sources.jar>central=
+qpid-proton-j-extensions-1.2.3.jar>central=
+qpid-proton-j-extensions-1.2.3.pom>central=

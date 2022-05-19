@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 08:45:32 IST 2021
+keycloak-servlet-filter-adapter-11.0.2.jar>central=
+keycloak-servlet-filter-adapter-11.0.2-sources.jar>central=
+keycloak-servlet-filter-adapter-11.0.2.pom>central=

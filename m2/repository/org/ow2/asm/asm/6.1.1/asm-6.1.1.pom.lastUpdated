@@ -1,0 +1,9 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Nov 16 22:16:18 IST 2021
+https\://artifacts.alfresco.com/nexus/content/groups/public/.lastUpdated=1637081177627
+https\://repo.maven.apache.org/maven2/.lastUpdated=1637081178634
+http\://0.0.0.0/.error=Could not transfer artifact org.ow2.asm\:asm\:pom\:6.1.1 from/to maven-default-http-blocker (http\://0.0.0.0/)\: Blocked mirror for repositories\: [alfresco-public (http\://artifacts.alfresco.com/nexus/content/repositories/releases, default, releases+snapshots)]
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.lastUpdated=1637081178306
+@default-maven-default-http-blocker-http\://0.0.0.0/.lastUpdated=1637081176884
+https\://artifacts.alfresco.com/nexus/content/groups/public/.error=
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.error=

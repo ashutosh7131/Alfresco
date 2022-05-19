@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Dec 18 19:32:22 IST 2021
+xalan-2.7.2-alfresco.jar>alfresco-artifacts-repository=
+xalan-2.7.2-alfresco.pom>alfresco-artifacts-repository=
+xalan-2.7.2-alfresco.jar>alfresco-public=
+xalan-2.7.2-alfresco.pom>alfresco-public=

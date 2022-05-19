@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 17:48:22 IST 2021
+aikau-1.0.113.jar>alfresco-public=
+aikau-1.0.113.pom>alfresco-artifacts-repository=
+aikau-1.0.113-sources.jar>alfresco-artifacts-repository=

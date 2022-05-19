@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Feb 04 18:37:27 IST 2022
+spring-data-rest-webmvc-3.2.1.RELEASE-sources.jar>central=
+spring-data-rest-webmvc-3.2.1.RELEASE.jar>central=
+spring-data-rest-webmvc-3.2.1.RELEASE.pom>central=

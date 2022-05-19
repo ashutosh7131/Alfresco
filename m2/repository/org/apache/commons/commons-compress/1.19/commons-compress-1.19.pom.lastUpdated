@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Nov 16 21:03:13 IST 2021
+https\://repo.maven.apache.org/maven2/.lastUpdated=1637076793285
+http\://0.0.0.0/.error=Could not transfer artifact org.apache.commons\:commons-compress\:pom\:1.19 from/to maven-default-http-blocker (http\://0.0.0.0/)\: Blocked mirror for repositories\: [alfresco-public (http\://artifacts.alfresco.com/nexus/content/repositories/releases, default, releases+snapshots)]
+@default-maven-default-http-blocker-http\://0.0.0.0/.lastUpdated=1637076792753

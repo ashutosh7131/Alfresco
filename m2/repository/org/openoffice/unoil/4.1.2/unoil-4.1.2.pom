@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.openoffice</groupId>
+  <artifactId>unoil</artifactId>
+  <version>4.1.2</version>
+  <packaging>jar</packaging>
+  <name>UNO interface library</name>
+  <description>The precompiled Java interfaces of the OOo API.</description>
+  <url>https://wiki.openoffice.org/wiki/Uno</url>
+  <licenses>
+    <license>
+      <name>The Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <name>Apache OpenOffice Project</name>
+      <email>dev@openoffice.apache.org</email>
+      <organization>Apache Software Foundation</organization>
+      <organizationUrl>http://www.apache.org</organizationUrl>
+    </developer> 
+    <developer>
+      <name>Carl Marcum</name>
+      <email>cmarcum@apache.org</email>
+      <organization>Apache Software Foundation</organization>
+      <organizationUrl>http://www.apache.org</organizationUrl>
+    </developer>
+  </developers>
+  <scm>
+    <connection>http://svn.apache.org/repos/asf/openoffice/trunk/main/unoil</connection>
+    <developerConnection>https://svn.apache.org/repos/asf/openoffice/trunk/main/unoil</developerConnection>
+    <url>http://svn.apache.org/repos/asf/openoffice/trunk/main/unoil</url>
+  </scm>
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>ridl</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
+</project>

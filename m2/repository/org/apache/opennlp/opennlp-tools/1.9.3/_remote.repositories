@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 17:52:26 IST 2021
+opennlp-tools-1.9.3-sources.jar>central=
+opennlp-tools-1.9.3.jar>central=
+opennlp-tools-1.9.3.pom>central=

@@ -1,0 +1,125 @@
+package com.swissre.alfrm.webscripts;
+
+import org.alfresco.service.ServiceRegistry;
+import org.alfresco.service.cmr.repository.NodeRef;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.springframework.extensions.webscripts.Cache;
+import org.springframework.extensions.webscripts.DeclarativeWebScript;
+import org.springframework.extensions.webscripts.Status;
+import org.springframework.extensions.webscripts.WebScriptRequest;
+import com.azure.messaging.servicebus.ServiceBusClientBuilder;
+import com.azure.messaging.servicebus.ServiceBusMessage;
+import com.azure.messaging.servicebus.ServiceBusReceivedMessageContext;
+import com.azure.messaging.servicebus.ServiceBusSenderClient;
+import com.swissre.alfrm.message.MessageService;
+import com.swissre.alfrm.model.SwissReModel;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.*;
+
+public class BoxnumberUpdateWebscript extends DeclarativeWebScript {
+	private static String connectionString;
+	private static String queueName;
+	private static JSONArray dataObj;
+	private static JSONObject obj;
+	private static final Logger LOG = LoggerFactory.getLogger(BoxnumberUpdateWebscript.class);
+	private static NodeRef nodeRef;
+	private NodeRef recNodeRef1;
+	private List<String> newNodeRef;
+	private List<NodeRef> recNodeRefList = new ArrayList<NodeRef>();
+	private ServiceRegistry serviceRegistry;
+
+	@Override
+	protected Map<String, Object> executeImpl(WebScriptRequest req, Status status, Cache cache) {
+		Map<String, Object> model = new HashMap<>();
+
+		Object content = req.parseContent();
+		if (!(content instanceof JSONArray)) {
+			status.setCode(Status.STATUS_BAD_REQUEST);
+			status.setRedirect(true);
+			return model;
+		}
+
+		try {
+			dataObj = (JSONArray) content;
+			for (int i = 0; i < dataObj.length(); i++) {
+				obj = (JSONObject) dataObj.get(i);
+				//LOG.info("JSON Presented is ::" + obj);
+				LOG.info("Box number selected is :" + obj.get("sr:boxNumber"));
+				nodeRef = new NodeRef((String) obj.get("nodeRef"));
+				ServiceBusMessage messages = new ServiceBusMessage(nodeRef.toString());
+				messages.setContentType("application/json");
+				messages.setMessageId(nodeRef.getId());
+				ServiceBusSenderClient senderClient = new ServiceBusClientBuilder()
+						.connectionString(BoxnumberUpdateWebscript.getConnectionString()).sender()
+						.queueName(BoxnumberUpdateWebscript.getQueueName()).buildClient();
+				senderClient.sendMessage(messages);
+				senderClient.close();
+			}
+
+		} catch (Exception e) {
+			status.setCode(Status.STATUS_INTERNAL_SERVER_ERROR);
+			status.setException(e);
+			status.setMessage("Problem executing boxnumber updation web script");
+		}
+
+		try {
+			MessageService.receiveMessages();
+			newNodeRef = MessageService.getNewNodeRef();
+			for (String nodeRefRec : newNodeRef) {
+				recNodeRef1 = new NodeRef(nodeRefRec);
+				recNodeRefList.add(recNodeRef1);
+			}
+
+			for (NodeRef recNodeRef : recNodeRefList) {
+				LOG.info("Node properties are:" + serviceRegistry.getNodeService().getProperties(recNodeRef));
+				Map pros = serviceRegistry.getNodeService().getProperties(recNodeRef);
+				Set keys = pros.keySet();
+				Iterator i = keys.iterator();
+				while (i.hasNext()) {
+				   System.out.println(i.next());
+				}
+				Collection getValues = pros.values();
+				i = getValues.iterator();
+				while (i.hasNext()) {
+				   System.out.println(i.next());
+				}
+				//serviceRegistry.getNodeService().setType(recNodeRef, SwissReModel.TYPE_SR_DOCTYPE);
+				LOG.info("Completed the conversion: " + recNodeRef);
+			}
+
+		} catch (InterruptedException e) {
+			LOG.info("Cannot Read Message from queue....");
+			e.printStackTrace();
+		}
+
+		return model;
+	}
+
+	public static String getConnectionString() {
+		return connectionString;
+	}
+
+	public static void setConnectionString(String connectionString) {
+		BoxnumberUpdateWebscript.connectionString = connectionString;
+	}
+
+	public static String getQueueName() {
+		return queueName;
+	}
+
+	public static void setQueueName(String queueName) {
+		BoxnumberUpdateWebscript.queueName = queueName;
+	}
+
+	public ServiceRegistry getServiceRegistry() {
+		return serviceRegistry;
+	}
+
+	public void setServiceRegistry(ServiceRegistry serviceRegistry) {
+		this.serviceRegistry = serviceRegistry;
+	}
+
+}

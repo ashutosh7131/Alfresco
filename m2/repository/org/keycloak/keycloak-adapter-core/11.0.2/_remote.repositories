@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 08:45:57 IST 2021
+keycloak-adapter-core-11.0.2.jar>central=
+keycloak-adapter-core-11.0.2.pom>central=
+keycloak-adapter-core-11.0.2-sources.jar>central=

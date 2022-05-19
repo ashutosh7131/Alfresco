@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 09:14:18 IST 2021
+antlr-3.5.2.jar>central=
+antlr-3.5.2-sources.jar>central=
+antlr-3.5.2.pom>central=

@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 08:47:51 IST 2021
+alfresco-greenmail-6.2.pom>alfresco-artifacts-repository=
+alfresco-greenmail-6.2.jar>alfresco-artifacts-repository=
+alfresco-greenmail-6.2-sources.jar>alfresco-artifacts-repository=

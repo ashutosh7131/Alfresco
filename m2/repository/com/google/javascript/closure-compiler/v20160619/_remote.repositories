@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 08:37:11 IST 2021
+closure-compiler-v20160619.jar>central=
+closure-compiler-v20160619.pom>central=
+closure-compiler-v20160619-sources.jar>central=

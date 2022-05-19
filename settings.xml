@@ -1,0 +1,35 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                         https://maven.apache.org/xsd/settings-1.0.0.xsd">  
+  <servers>
+     <server>
+        <id>alfresco-artifacts-repository</id>
+        <username>swiss_re_management_ltd</username>
+        <password>DlvkDaRTC069Zd2TeN0l</password>
+     </server>
+  </servers>
+
+   <profiles>
+       <profile>
+           <id>alfresco.default</id>
+           <activation>
+               <activeByDefault>true</activeByDefault>
+           </activation>
+           <repositories>
+               <repository>
+                   <id>alfresco-artifacts-repository</id>
+                   <url>https://artifacts.alfresco.com/nexus/content/groups/private</url>
+               </repository>
+             </repositories>
+           <pluginRepositories>
+               <pluginRepository>
+                   <id>alfresco-public</id>
+                   <name>Alfresco</name>
+                 <url>http://artifacts.alfresco.com/nexus/content/repositories/releases</url>
+               </pluginRepository>
+           </pluginRepositories>
+       </profile>
+   </profiles>
+
+</settings>

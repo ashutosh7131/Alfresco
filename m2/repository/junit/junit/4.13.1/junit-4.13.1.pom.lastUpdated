@@ -1,0 +1,9 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 09:06:20 IST 2021
+https\://artifacts.alfresco.com/nexus/content/groups/public/.lastUpdated=1637120178359
+https\://repo.maven.apache.org/maven2/.lastUpdated=1637120180889
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.lastUpdated=1637120179274
+https\://artifacts.alfresco.com/nexus/content/groups/public/.error=
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.error=
+@default-alfresco-private-repository-https\://artifacts.alfresco.com/nexus/content/groups/private/.lastUpdated=1637120180146
+https\://artifacts.alfresco.com/nexus/content/groups/private/.error=Could not transfer artifact junit\:junit\:pom\:4.13.1 from/to alfresco-private-repository (https\://artifacts.alfresco.com/nexus/content/groups/private)\: Access denied to https\://artifacts.alfresco.com/nexus/content/groups/private/junit/junit/4.13.1/junit-4.13.1.pom. Error code 401, Unauthorized

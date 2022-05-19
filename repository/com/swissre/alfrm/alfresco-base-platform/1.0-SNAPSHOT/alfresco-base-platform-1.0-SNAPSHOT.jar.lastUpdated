@@ -1,0 +1,8 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Feb 03 02:50:10 IST 2022
+https\://artifacts.alfresco.com/nexus/content/groups/public/.lastUpdated=1643836809170
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.lastUpdated=1643836809993
+https\://artifacts.alfresco.com/nexus/content/groups/public/.error=
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.error=
+@default-alfresco-private-repository-https\://artifacts.alfresco.com/nexus/content/groups/private/.lastUpdated=1643836810792
+https\://artifacts.alfresco.com/nexus/content/groups/private/.error=Could not transfer artifact com.swissre.alfrm\:alfresco-base-platform\:jar\:1.0-SNAPSHOT from/to alfresco-private-repository (https\://artifacts.alfresco.com/nexus/content/groups/private)\: Access denied to https\://artifacts.alfresco.com/nexus/content/groups/private/com/swissre/alfrm/alfresco-base-platform/1.0-SNAPSHOT/alfresco-base-platform-1.0-SNAPSHOT.jar. Error code 401, Unauthorized

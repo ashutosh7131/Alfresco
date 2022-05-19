@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Feb 02 21:05:09 IST 2022
+share-11.77-classes.jar>alfresco-artifacts-repository=
+share-11.77-sources.jar>alfresco-artifacts-repository=
+share-11.77.pom>alfresco-public=
+share-11.77-classes.jar>alfresco-public=
+share-11.77.pom>alfresco-artifacts-repository=

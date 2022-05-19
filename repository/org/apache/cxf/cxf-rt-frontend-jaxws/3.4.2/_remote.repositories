@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Dec 18 19:11:48 IST 2021
+cxf-rt-frontend-jaxws-3.4.2.jar>central=
+cxf-rt-frontend-jaxws-3.4.2.pom>central=
+cxf-rt-frontend-jaxws-3.4.2-sources.jar>central=

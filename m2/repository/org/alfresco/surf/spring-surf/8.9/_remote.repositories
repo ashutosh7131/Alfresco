@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 08:37:00 IST 2021
+spring-surf-8.9.jar>alfresco-artifacts-repository=
+spring-surf-8.9-sources.jar>alfresco-artifacts-repository=
+spring-surf-8.9.pom>alfresco-artifacts-repository=

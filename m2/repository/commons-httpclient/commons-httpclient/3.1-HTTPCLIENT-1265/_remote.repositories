@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 08:38:15 IST 2021
+commons-httpclient-3.1-HTTPCLIENT-1265.pom>alfresco-artifacts-repository=
+commons-httpclient-3.1-HTTPCLIENT-1265.jar>alfresco-artifacts-repository=
+commons-httpclient-3.1-HTTPCLIENT-1265-sources.jar>alfresco-artifacts-repository=

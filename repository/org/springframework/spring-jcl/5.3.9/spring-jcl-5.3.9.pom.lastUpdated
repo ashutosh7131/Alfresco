@@ -1,0 +1,9 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Feb 02 21:01:10 IST 2022
+https\://artifacts.alfresco.com/nexus/content/groups/public/.lastUpdated=1643815868272
+https\://repo.maven.apache.org/maven2/.lastUpdated=1643815870178
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.lastUpdated=1643815869059
+https\://artifacts.alfresco.com/nexus/content/groups/public/.error=
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.error=
+@default-alfresco-private-repository-https\://artifacts.alfresco.com/nexus/content/groups/private/.lastUpdated=1643815869862
+https\://artifacts.alfresco.com/nexus/content/groups/private/.error=Could not transfer artifact org.springframework\:spring-jcl\:pom\:5.3.9 from/to alfresco-private-repository (https\://artifacts.alfresco.com/nexus/content/groups/private)\: Access denied to https\://artifacts.alfresco.com/nexus/content/groups/private/org/springframework/spring-jcl/5.3.9/spring-jcl-5.3.9.pom. Error code 401, Unauthorized

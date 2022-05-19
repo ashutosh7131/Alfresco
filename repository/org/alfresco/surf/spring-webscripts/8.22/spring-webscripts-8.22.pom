@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+
+   <parent>
+      <groupId>org.alfresco.surf</groupId>
+      <artifactId>spring-surf-webscripts-parent</artifactId>
+      <version>8.22</version>
+      <relativePath>../../pom.xml</relativePath>
+   </parent>
+
+   <artifactId>spring-webscripts</artifactId>
+   <name>Surf Web Scripts</name>
+   <description>Surf Web Scripts</description>
+   <url>spring-webscripts/${project.artifactId}</url>
+   <packaging>jar</packaging>
+
+   <dependencies>
+
+      <!-- Surf Core - Configuration Service -->
+      <dependency>
+         <groupId>org.alfresco.surf</groupId>
+         <artifactId>spring-surf-core-configservice</artifactId>
+         <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+         <groupId>org.mozilla</groupId>
+         <artifactId>rhino</artifactId>
+         <version>1.7.11</version>
+      </dependency>
+
+      <dependency>
+         <groupId>commons-fileupload</groupId>
+         <artifactId>commons-fileupload</artifactId>
+      </dependency>
+
+      <dependency>
+         <groupId>commons-io</groupId>
+         <artifactId>commons-io</artifactId>
+      </dependency>
+
+      <dependency>
+         <groupId>commons-collections</groupId>
+         <artifactId>commons-collections</artifactId>
+      </dependency>
+
+      <dependency>
+         <groupId>commons-digester</groupId>
+         <artifactId>commons-digester</artifactId>
+      </dependency>
+
+      <dependency>
+         <groupId>commons-codec</groupId>
+         <artifactId>commons-codec</artifactId>
+      </dependency>
+
+      <dependency>
+         <groupId>org.json</groupId>
+         <artifactId>json</artifactId>
+      </dependency>
+
+      <dependency>
+          <groupId>com.googlecode.json-simple</groupId>
+          <artifactId>json-simple</artifactId>
+          <version>1.1.1</version>
+          <exclusions>
+              <exclusion>
+                  <groupId>junit</groupId>
+                  <artifactId>junit</artifactId>
+              </exclusion>
+          </exclusions>
+      </dependency>
+
+      <dependency>
+         <groupId>org.freemarker</groupId>
+         <artifactId>freemarker</artifactId>
+      </dependency>
+
+      <dependency>
+         <groupId>org.htmlparser</groupId>
+         <artifactId>htmlparser</artifactId>
+         <version>2.1</version>
+      </dependency>
+
+      <dependency>
+         <groupId>org.apache.httpcomponents</groupId>
+         <artifactId>httpclient</artifactId>
+         <version>4.5.9</version>
+      </dependency>
+
+      <!-- Additional Spring 3.0 dependencies -->
+      <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-webmvc</artifactId>
+         <version>${spring.version}</version>
+      </dependency>
+
+      <dependency>
+         <groupId>com.googlecode.owasp-java-html-sanitizer</groupId>
+         <artifactId>owasp-java-html-sanitizer</artifactId>
+      </dependency>
+   </dependencies>
+
+
+   <build>
+      <plugins>
+         <plugin>
+            <artifactId>maven-jar-plugin</artifactId>
+            <executions>
+               <execution>
+                  <goals>
+                     <goal>test-jar</goal>
+                  </goals>
+               </execution>
+            </executions>
+         </plugin>
+      </plugins>
+   </build>
+
+</project>

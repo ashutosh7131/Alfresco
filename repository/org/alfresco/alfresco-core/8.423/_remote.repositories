@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Dec 18 19:32:22 IST 2021
+alfresco-core-8.423.pom>alfresco-public=
+alfresco-core-8.423.jar>alfresco-public=
+alfresco-core-8.423.jar>alfresco-artifacts-repository=
+alfresco-core-8.423.pom>alfresco-artifacts-repository=
+alfresco-core-8.423-sources.jar>alfresco-artifacts-repository=

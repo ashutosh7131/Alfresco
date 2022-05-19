@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 11:19:28 IST 2021
+https\://artifacts.alfresco.com/nexus/content/groups/public/.lastUpdated=1637128168474
+26c5a2c2cad2217587aab8b65e4a63e67db10635@default-alfresco-artifacts-repository-https\://artifacts.alfresco.com/nexus/content/groups/private/.lastUpdated=1637128042893
+https\://artifacts.alfresco.com/nexus/content/groups/private/.error=Could not transfer artifact org.alfresco\:aikau\:jar\:1.0.113 from/to alfresco-artifacts-repository (https\://artifacts.alfresco.com/nexus/content/groups/private)\: transfer failed for https\://artifacts.alfresco.com/nexus/content/groups/private/org/alfresco/aikau/1.0.113/aikau-1.0.113.jar

@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 17:56:29 IST 2021
+activemq-spring-5.16.0.jar>central=
+activemq-spring-5.16.0.pom>central=
+activemq-spring-5.16.0-sources.jar>central=

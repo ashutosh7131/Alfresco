@@ -1,0 +1,9 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Feb 02 21:07:47 IST 2022
+https\://artifacts.alfresco.com/nexus/content/groups/public/.lastUpdated=1643816109675
+https\://repo.maven.apache.org/maven2/.lastUpdated=1643816267210
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.lastUpdated=1643816115859
+https\://artifacts.alfresco.com/nexus/content/groups/public/.error=
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.error=
+@default-alfresco-private-repository-https\://artifacts.alfresco.com/nexus/content/groups/private/.lastUpdated=1643816125788
+https\://artifacts.alfresco.com/nexus/content/groups/private/.error=Could not transfer artifact org.codehaus.plexus\:plexus-utils\:jar\:2.0.6 from/to alfresco-private-repository (https\://artifacts.alfresco.com/nexus/content/groups/private)\: Access denied to https\://artifacts.alfresco.com/nexus/content/groups/private/org/codehaus/plexus/plexus-utils/2.0.6/plexus-utils-2.0.6.jar. Error code 401, Unauthorized

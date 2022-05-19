@@ -1,0 +1,11 @@
+.adf-hide-small {
+    @media screen and (max-width: 959px) {
+        display: none !important;
+    }
+}
+
+.adf-hide-xsmall {
+    @media screen and (max-width: 599px) {
+        display: none !important;
+    }
+}

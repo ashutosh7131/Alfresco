@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>alfresco-enterprise-repo</artifactId>
+    <packaging>pom</packaging>
+    <name>Alfresco Enterprise Repo Parent</name>
+    <version>11.153</version>
+
+    <parent>
+        <groupId>org.alfresco</groupId>
+        <artifactId>alfresco-community-repo</artifactId>
+        <relativePath>../alfresco-community-repo/pom.xml</relativePath>
+        <version>11.140</version>
+    </parent>
+
+    <properties>
+        <dependency.alfresco-community-repo.version>11.140</dependency.alfresco-community-repo.version>
+
+        <acs.version.label /> <!-- 7.1.0.<acs.version.label> -->
+
+        <version.edition>Enterprise</version.edition>
+        <licenseName>enterprise</licenseName>
+
+        <dependency.alfresco-authorised-users.version>8.1</dependency.alfresco-authorised-users.version>
+        <dependency.activiti-repo-connector.version>1.12</dependency.activiti-repo-connector.version>
+        <dependency.activiti-webapp-explorer2-ui.version>5.19.0.3</dependency.activiti-webapp-explorer2-ui.version>
+        <dependency.alfresco-shared-file-store-data-model.version> 0.16.0</dependency.alfresco-shared-file-store-data-model.version>
+        <dependency.alfresco-spring-encryptor.version>6.1</dependency.alfresco-spring-encryptor.version>
+        <dependency.alfresco-enterprise-crypto.version>6.2</dependency.alfresco-enterprise-crypto.version>
+
+        <dependency.ojdbc8.version>12.2.0.1</dependency.ojdbc8.version>
+        <dependency.mssql-jdbc.version>9.2.1.jre11</dependency.mssql-jdbc.version>
+        <dependency.axiom.version>1.2.22</dependency.axiom.version>
+        <dependency.jasypt.version>1.9.3</dependency.jasypt.version>
+
+        <dependency.elasticsearch-shared.version>3.0.0</dependency.elasticsearch-shared.version>
+        <dependency.acs-enterprise-event-model.version>0.0.1</dependency.acs-enterprise-event-model.version>
+    </properties>
+
+    <modules>
+        <module>repository</module>
+        <module>remote-api</module>
+        <module>packaging</module>
+        <module>amps</module>
+    </modules>
+
+    <scm>
+        <connection>scm:git:https://github.com/Alfresco/alfresco-enterprise-repo.git</connection>
+        <developerConnection>scm:git:https://github.com/Alfresco/alfresco-enterprise-repo.git</developerConnection>
+        <url>https://github.com/Alfresco/alfresco-enterprise-repo</url>
+        <tag>11.153</tag>
+    </scm>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>alfresco-internal-snapshots</id>
+            <url>https://artifacts.alfresco.com/nexus/content/repositories/enterprise-snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>alfresco-internal</id>
+            <url>https://artifacts.alfresco.com/nexus/content/repositories/enterprise-releases</url>
+        </repository>
+    </distributionManagement>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.alfresco</groupId>
+                <artifactId>alfresco-core</artifactId>
+                <version>${dependency.alfresco-community-repo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.alfresco</groupId>
+                <artifactId>alfresco-core</artifactId>
+                <version>${dependency.alfresco-community-repo.version}</version>
+                <classifier>tests</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.alfresco</groupId>
+                <artifactId>alfresco-data-model</artifactId>
+                <version>${dependency.alfresco-community-repo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.alfresco</groupId>
+                <artifactId>alfresco-data-model</artifactId>
+                <version>${dependency.alfresco-community-repo.version}</version>
+                <classifier>tests</classifier>
+                <scope>test</scope>
+                <exclusions>
+                    <!-- REPO-4998 - Exclusion due to classpath conflicts between org.codehaus.woodstox:woodstox-core-asl and com.fasterxml.woodstox:woodstox-core -->
+                    <exclusion>
+                        <groupId>org.codehaus.woodstox</groupId>
+                        <artifactId>woodstox-core-asl</artifactId>
+                    </exclusion>
+                    <!-- REPO-5009 Excluded to avoid duplicated classes with javax.jws:javax.jws-api (using jakarta.jws:jakarta.jws-api now - see REPO-5031) -->
+                    <exclusion>
+                        <groupId>org.apache.geronimo.specs</groupId>
+                        <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+                    </exclusion>
+                    <!-- Duplicates classes from jakarta.transaction:jakarta.transaction-api -->
+                    <exclusion>
+                        <groupId>org.apache.geronimo.specs</groupId>
+                        <artifactId>geronimo-jta_1.1_spec</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.alfresco</groupId>
+                <artifactId>alfresco-repository</artifactId>
+                <version>${dependency.alfresco-community-repo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.alfresco</groupId>
+                <artifactId>alfresco-repository</artifactId>
+                <version>${dependency.alfresco-community-repo.version}</version>
+                <classifier>tests</classifier>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.alfresco</groupId>
+                <artifactId>alfresco-remote-api</artifactId>
+                <version>${dependency.alfresco-community-repo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.alfresco</groupId>
+                <artifactId>alfresco-remote-api</artifactId>
+                <version>${dependency.alfresco-community-repo.version}</version>
+                <classifier>tests</classifier>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.alfresco</groupId>
+                <artifactId>alfresco-community-repo-distribution</artifactId>
+                <version>${dependency.alfresco-community-repo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.alfresco.tas</groupId>
+                <artifactId>alfresco-community-repo-cmis-test</artifactId>
+                <version>${dependency.alfresco-community-repo.version}</version>
+                <classifier>tests</classifier>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.alfresco.tas</groupId>
+                <artifactId>alfresco-community-repo-email-test</artifactId>
+                <version>${dependency.alfresco-community-repo.version}</version>
+                <classifier>tests</classifier>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.alfresco.tas</groupId>
+                <artifactId>alfresco-community-repo-integration-test</artifactId>
+                <version>${dependency.alfresco-community-repo.version}</version>
+                <classifier>tests</classifier>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.alfresco.tas</groupId>
+                <artifactId>alfresco-community-repo-restapi-test</artifactId>
+                <version>${dependency.alfresco-community-repo.version}</version>
+                <classifier>tests</classifier>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.alfresco.tas</groupId>
+                <artifactId>alfresco-community-repo-webdav-test</artifactId>
+                <version>${dependency.alfresco-community-repo.version}</version>
+                <classifier>tests</classifier>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-cbor</artifactId>
+                <version>${dependency.jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.alfresco</groupId>
+                <artifactId>alfresco-enterprise-crypto</artifactId>
+                <version>${dependency.alfresco-enterprise-crypto.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.activiti</groupId>
+                <artifactId>activiti-repo-connector</artifactId>
+                <version>${dependency.activiti-repo-connector.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.alfresco</groupId>
+                <artifactId>alfresco-spring-encryptor</artifactId>
+                <version>${dependency.alfresco-spring-encryptor.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.alfresco.authorization</groupId>
+                <artifactId>alfresco-authorised-users</artifactId>
+                <version>${dependency.alfresco-authorised-users.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.ws.commons.axiom</groupId>
+                <artifactId>axiom-api</artifactId>
+                <version>${dependency.axiom.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.ws.commons.axiom</groupId>
+                <artifactId>axiom-impl</artifactId>
+                <version>${dependency.axiom.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.alfresco</groupId>
+                <artifactId>alfresco-log-sanitizer</artifactId>
+                <version>${dependency.alfresco-log-sanitizer.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hazelcast</groupId>
+                <artifactId>hazelcast</artifactId>
+                <version>3.12.6</version>
+            </dependency>
+            <dependency>
+                <groupId>org.alfresco.integrations</groupId>
+                <artifactId>alfresco-googledrive-repo-enterprise</artifactId>
+                <version>${alfresco.googledrive.version}</version>
+                <type>amp</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.alfresco</groupId>
+                <artifactId>alfresco-enterprise-repository</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.alfresco</groupId>
+                <artifactId>alfresco-enterprise-repository</artifactId>
+                <version>${project.version}</version>
+                <classifier>tests</classifier>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.alfresco</groupId>
+                <artifactId>alfresco-enterprise-remote-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.alfresco</groupId>
+                <artifactId>alfresco-enterprise-remote-api</artifactId>
+                <version>${project.version}</version>
+                <classifier>tests</classifier>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

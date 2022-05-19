@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 09:13:12 IST 2021
+activemq-camel-5.15.12.jar>central=
+activemq-camel-5.15.12.pom>central=
+activemq-camel-5.15.12-sources.jar>central=

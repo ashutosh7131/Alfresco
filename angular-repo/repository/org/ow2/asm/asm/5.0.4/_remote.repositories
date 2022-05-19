@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Feb 04 18:37:58 IST 2022
+asm-5.0.4.jar>central=
+asm-5.0.4.pom>central=
+asm-5.0.4-sources.jar>central=

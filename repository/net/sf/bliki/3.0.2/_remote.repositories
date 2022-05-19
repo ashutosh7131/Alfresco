@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Dec 18 19:32:22 IST 2021
+bliki-3.0.2.jar>alfresco-artifacts-repository=
+bliki-3.0.2.pom>alfresco-public=
+bliki-3.0.2.pom>alfresco-artifacts-repository=
+bliki-3.0.2.jar>alfresco-public=

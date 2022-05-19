@@ -1,0 +1,9 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 11:01:48 IST 2021
+https\://artifacts.alfresco.com/nexus/content/groups/public/.lastUpdated=1637127086834
+@default-alfresco-public-snapshots-https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.lastUpdated=1637127108415
+https\://repo.maven.apache.org/maven2/.lastUpdated=1637127108747
+https\://artifacts.alfresco.com/nexus/content/groups/private/.lastUpdated=1637127086112
+https\://artifacts.alfresco.com/nexus/content/groups/public/.error=
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.error=Could not transfer artifact org.apache.camel\:camel-amqp\:pom\:3.7.4 from/to alfresco-public-snapshots (https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots)\: transfer failed for https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/org/apache/camel/camel-amqp/3.7.4/camel-amqp-3.7.4.pom
+https\://artifacts.alfresco.com/nexus/content/groups/private/.error=

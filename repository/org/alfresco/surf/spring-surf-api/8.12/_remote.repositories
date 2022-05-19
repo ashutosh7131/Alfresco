@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Feb 02 21:05:09 IST 2022
+spring-surf-api-8.12-sources.jar>alfresco-artifacts-repository=
+spring-surf-api-8.12.jar>alfresco-public=
+spring-surf-api-8.12.pom>alfresco-artifacts-repository=
+spring-surf-api-8.12.jar>alfresco-artifacts-repository=
+spring-surf-api-8.12.pom>alfresco-public=

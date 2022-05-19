@@ -1,0 +1,42 @@
+type.sr_generalDoc=General Document
+type.sr_hrDoc=HR Doc
+
+set.swiss.re.type.generalDoc=General Document
+prop.first.name.generalDoc.swiss.re=First Name
+prop.last.name.generalDoc.swiss.re=Last Name
+prop.contact.number.generalDoc.swiss.re=Contact Number
+prop.location.generalDoc.swiss.re=Location
+prop.lob.generalDoc.swiss.re=Line Of Business
+prop.closureDt.claim.swiss.re=Closure Date
+prop.claimStatus.claim.swiss.re=Claim Status
+prop.contractStartDt.contract.swiss.re=Contract Start Date
+prop.contractStatus.contract.swiss.re=Contract Status
+prop.expirationDt.contract.swiss.re=Expiration Date
+prop.boxNo.generalDoc.swiss.re=Box Number
+prop.buildingNo.generalDoc.swiss.re=Building Number
+set.swiss.re.type.hrDoc=HR Doc
+aspect.claim=Claim
+aspect.contracts=Contracts
+prop.doc.number.hrDoc.swiss.re=Document Number
+prop.doc.type.hrDoc.swiss.re=Document Type
+prop.claim.id.claim.swiss.re=Claim Id
+prop.claim.dt.claim.swiss.re=Claim Date
+prop.contract.startdt.contracts=Contract Start Date
+prop.contract.enddt.contracts=Contract End Date
+prop.contract.id.contracts=Contract ID
+
+prop.department.aspect.generalDoc.swiss.re=Department
+prop.region.aspect.generalDoc.swiss.re=Region
+
+form.label.advancedsearch.srGeneralDoc=General Document
+form.description.advancedsearch.srGeneralDoc=Search for General Document
+#actions.example-action=Boxing
+actions.custom-action=Custom Content Action
+message.custom-action.success=Custom Content action worked
+message.custom-action.failure=Custom Content action failed
+
+#actions.example-action=Boxing
+actions.index-action=Generate Index File
+message.index-action.success=Index File Generated Successfully
+message.index-action.failure=Index File Generation failed
+

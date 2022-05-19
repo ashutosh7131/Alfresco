@@ -1,0 +1,9 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Feb 02 21:07:47 IST 2022
+https\://artifacts.alfresco.com/nexus/content/groups/public/.lastUpdated=1643816109718
+https\://repo.maven.apache.org/maven2/.lastUpdated=1643816267467
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.lastUpdated=1643816115866
+https\://artifacts.alfresco.com/nexus/content/groups/public/.error=
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.error=
+@default-alfresco-private-repository-https\://artifacts.alfresco.com/nexus/content/groups/private/.lastUpdated=1643816125800
+https\://artifacts.alfresco.com/nexus/content/groups/private/.error=Could not transfer artifact org.keycloak\:keycloak-common\:jar\:13.0.0 from/to alfresco-private-repository (https\://artifacts.alfresco.com/nexus/content/groups/private)\: Access denied to https\://artifacts.alfresco.com/nexus/content/groups/private/org/keycloak/keycloak-common/13.0.0/keycloak-common-13.0.0.jar. Error code 401, Unauthorized

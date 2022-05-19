@@ -1,0 +1,10 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 08:49:41 IST 2021
+@default-alfresco-public-snapshots-https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.lastUpdated=1637119181207
+@default-central-https\://repo.maven.apache.org/maven2/.lastUpdated=1637119181211
+https\://artifacts.alfresco.com/nexus/content/groups/private/.lastUpdated=1637119181179
+https\://artifacts.alfresco.com/nexus/content/groups/public/.error=Could not transfer artifact org.apache.xmlbeans\:xmlbeans\:jar\:sources\:3.1.0 from/to alfresco-public (https\://artifacts.alfresco.com/nexus/content/groups/public)\: The operation was cancelled.
+https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots/.error=Could not transfer artifact org.apache.xmlbeans\:xmlbeans\:jar\:sources\:3.1.0 from/to alfresco-public-snapshots (https\://artifacts.alfresco.com/nexus/content/groups/public-snapshots)\: The operation was cancelled.
+https\://repo.maven.apache.org/maven2/.error=Could not transfer artifact org.apache.xmlbeans\:xmlbeans\:jar\:sources\:3.1.0 from/to central (https\://repo.maven.apache.org/maven2)\: The operation was cancelled.
+https\://artifacts.alfresco.com/nexus/content/groups/private/.error=
+@default-alfresco-public-https\://artifacts.alfresco.com/nexus/content/groups/public/.lastUpdated=1637119181188

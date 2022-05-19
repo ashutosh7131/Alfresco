@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 17 09:14:53 IST 2021
+tika-parsers-1.24.1.jar>central=
+tika-parsers-1.24.1-sources.jar>central=
+tika-parsers-1.24.1.pom>central=
